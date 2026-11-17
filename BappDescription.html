@@ -1,0 +1,20 @@
+<p>This extension detects and validates the React Server Components unsafe deserialization vulnerability tracked as CVE-2025-55182 (React2Shell), a pre-authentication remote code execution flaw. It provides a dedicated UI tab, passive endpoint fingerprinting, two active scan modes, and optional out-of-band confirmation via Burp Collaborator.</p>
+
+<h2>Features</h2>
+<ul>
+  <li>Safe digest check mode triggers a 500 response and digest error to confirm the vulnerable deserialization path without executing any code.</li>
+  <li>PoC redirect check mode executes a command and captures output via the <code class=InlineCode>X-Action-Redirect</code> header for high-confidence exploitation confirmation.</li>
+  <li>Optional Burp Collaborator out-of-band confirmation in PoC mode, using non-blocking 60-second scheduled polling.</li>
+  <li>Passive fingerprinting identifies RSC endpoints and surfaces findings in the Target and Scanner panels automatically.</li>
+  <li>Context-menu shortcuts available in Proxy history, Target site map, and Scanner results to load requests directly into the React2Shell tab.</li>
+  <li>Unix and Windows payload toggles, custom header support, and same-host redirect following for flexible probe configuration.</li>
+</ul>
+
+<h2>Usage</h2>
+<ol>
+  <li>Open the React2Shell tab, then enter the target base URL, host, and path, or right-click a request in Proxy history or Target site map and select Load into React2Shell tab.</li>
+  <li>Select a scan mode: Safe digest for low-impact confirmation, or PoC redirect for strong exploitation evidence.</li>
+  <li>If using PoC redirect mode, optionally enable Burp Collaborator out-of-band confirmation.</li>
+  <li>Configure any optional settings: add custom headers, enable same-host redirect following, or toggle the Windows payload if the target is a Windows host.</li>
+  <li>Click Run scan. Results appear in the activity log and as scanner issues labelled <code class=InlineCode>React2Shell / CVE-2025-55182</code>.</li>
+</ol>

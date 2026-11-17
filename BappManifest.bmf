@@ -1,0 +1,13 @@
+Uuid: 495e23aadbf7427ba755e00bc17a9068
+ExtensionType: 1
+Name: React2Shell RCE Scanner and Validator
+RepoName: react2shell-rce-scanner-validator
+ScreenVersion: 0.1.2
+SerialVersion: 1
+MinPlatformVersion: 2
+ProOnly: True
+Author: j0lt
+ShortDescription: Detects and validates CVE-2025-55182 React Server Components RCE.
+EntryPoint: react2shellburp-0.1.2.jar
+BuildCommand: ./gradlew build
+SupportedProducts: Pro
